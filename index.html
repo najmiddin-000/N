@@ -8,13 +8,28 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon_io/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon_io/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+		  $("#myInput").on("keyup", function() {
+			var value = $(this).val().toLowerCase();
+			$("#myTable tr").filter(function() {
+			  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		  });
+		});
+	</script>
+
 </head>
 <body style="background-color: rgb(123, 123, 123, 1.0);">
-
+<center>
+	<input id="myInput" type="text" placeholder="Search.." style="">
+</center>
 	<center>
 		<table border="1" cellpadding="10">
+			<thead>
 			<tr>
-				<td style="text-align: center;" colspan="7"; bgcolor="black"><h1><span style="color: white">Vocablary</span></h1></td>
+				<td style="text-align: center;" colspan="7"; bgcolor="black"><h1><span style="color: white">Vocabulary</span></h1></td>
 			</tr>
 			<tr>
 				<td style="text-align: center;" colspan="7"; bgcolor="white"><strong>DAY-1</strong></td>
@@ -24,6 +39,8 @@
 				<td colspan="2"; bgcolor="white" style="text-align: center"><strong>BOSHLANG'ICH DARAJA</strong></td>
 				<td colspan="2"; bgcolor="white" style="text-align: center"><strong>НАЧАЛЬНАЯ СТАДИЯ</strong></td>
 			</tr>
+			</thead>
+			<tbody id='myTable'>
 			<tr>
 				<td bgcolor="white">1)</td>
 				<td bgcolor="white" style="text-align: center">family (n)</td>
@@ -295,7 +312,12 @@
 				<td><audio controls><source src="audio\russian\30) мужчины.MP3"></audio></td>
 			</tr>
 			<tr>
-				<td style="text-align: center;" colspan="7"; bgcolor="black"><strong><span style="color: white;">DAY-2</span></strong></td>
+				<td colspan="3" bgcolor="white" style="text-align: center"><a href="PDF\30.pdf" download target="_blank">PDF</a></td>
+				<td colspan="2" bgcolor="white" style="text-align: center"><audio controls><source src="audio\eng_uzb\day_1_eng_uzb.MP3"></audio></td>
+				<td colspan="2" bgcolor="white" style="text-align: center"><audio controls><source src="audio\eng_rus\day_1_eng_rus.MP3"></audio></td>
+			</tr>
+			<tr>
+				<td style="text-align: center;" colspan="7" bgcolor="black"><strong><span style="color: white;">DAY-2</span></strong></td>
 			</tr>
 			<!-- <tr>
 				<td bgcolor="white">31)</td>
@@ -396,8 +418,7 @@
 				<td bgcolor="white" style="text-align: center"></td>
 				<td><audio controls><source src="audio\russian\41).MP3"></audio></td>
 			</tr> -->
-
-
+			</tbody>
 		</table>
 	</center>
 
